@@ -30,17 +30,17 @@ services:
     #restart: unless-stopped
   app:
     build: .
+    #network_mode: "service:gluetun" #If using VPN, Remove the Hash from first and fill up Above Details.
     command: bash start.sh
     restart: unless-stopped
-    # ports are optional when using Cloudflare Tunnel
-    # ports:
-    #   - "880:880"
-    #   - "8880:8880"
+    ports:
+      - "880:880"
+      - "8880:8880"
 
-  cloudflared:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflared
-    restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
-    depends_on:
-      - app
+ # cloudflared:
+  #  image: cloudflare/cloudflared:latest
+  #  container_name: cloudflared
+  #  restart: unless-stopped
+  #  command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+  #  depends_on:
+  #    - app
