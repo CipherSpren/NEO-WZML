@@ -16,7 +16,7 @@ DEFAULT_LANG = "en"
 TG_PROXY = {}  # {"scheme": "socks5", "hostname": "", "port": 0, "username": "", "password": ""}
 USER_SESSION_STRING = ""
 CMD_SUFFIX = ""
-TIMEZONE = "UTC"
+TIMEZONE = "Asia/Kolkata"
 
 # Authorization
 AUTHORIZED_CHATS = ""  # space-separated chat ids; empty = all
